@@ -5,9 +5,16 @@ var options = new List<string> { "s", "n" };
 
 do
 {
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.Clear();
     int size = ConsoleExtension.GetInt("Ingresa el tamaño del rombo: ");
 
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.ForegroundColor = ConsoleColor.Yellow;
     DrawRhombus(size);
+
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.ForegroundColor = ConsoleColor.White;
 
     do
     {

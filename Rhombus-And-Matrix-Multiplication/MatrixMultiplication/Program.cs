@@ -5,10 +5,14 @@ var options = new List<string> { "s", "n" };
 
 do
 {
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.Clear();
     var m = ConsoleExtension.GetInt("Ingrese el valor de m: ");
     var n = ConsoleExtension.GetInt("Ingrese el valor de n: ");
     var p = ConsoleExtension.GetInt("Ingrese el valor de p: ");
 
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.ForegroundColor = ConsoleColor.Yellow;
     if (MoreThanZero(m, n, p))
     {
         Console.WriteLine("Los valores deben ser mayores a 0. ");
@@ -22,6 +26,9 @@ do
         MatrizB(B, n, p);
         MatrizC(A, B, m, n, p);
     }
+
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.ForegroundColor = ConsoleColor.White;
 
     do
     {
