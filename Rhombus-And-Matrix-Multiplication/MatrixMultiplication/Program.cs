@@ -9,7 +9,7 @@ do
     var n = ConsoleExtension.GetInt("Ingrese el valor de n: ");
     var p = ConsoleExtension.GetInt("Ingrese el valor de p: ");
 
-    if (n <= 0 || m <= 0 || p <= 0)
+    if (MoreThanCero(m, n, p))
     {
         Console.WriteLine("Los valores deben ser mayores a 0.");
     }
@@ -18,47 +18,9 @@ do
         int[,] A = new int[m, n];
         int[,] B = new int[n, p];
 
-        Console.WriteLine("***A***");
-
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                A[i, j] = (i + 1) * j;
-
-                Console.Write($"{A[i, j]} ");
-            }
-            Console.WriteLine();
-        }
-
-        Console.WriteLine("***B***");
-
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < p; j++)
-            {
-                B[i, j] = (j + 1) * i;
-
-                Console.Write($"{B[i, j]} ");
-            }
-            Console.WriteLine();
-        }
-
-        Console.WriteLine("***C***");
-
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < p; j++)
-            {
-                var C = 0;
-                for (int k = 0; k < n; k++)
-                {
-                    C += A[i, k] * B[k, j];
-                }
-                Console.Write($"{C} ");
-            }
-            Console.WriteLine();
-        }
+        MatrizA(A, m, n);
+        MatrizB(B, n, p);
+        MatrizC(A, B, m, n, p);
     }
 
     do
@@ -66,4 +28,61 @@ do
         answer = ConsoleExtension.GetValidOptions("Desea continuar? [S]í / [N]o?....:  ", options);
     } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
 } while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
+
+void MatrizC(int[,] A, int[,] B, int m, int n, int p)
+{
+    Console.WriteLine("***C***");
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < p; j++)
+        {
+            var C = 0;
+            for (int k = 0; k < n; k++)
+            {
+                C += A[i, k] * B[k, j];
+            }
+            Console.Write($"{C} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void MatrizB(int[,] B, int n, int p)
+{
+    Console.WriteLine("***B***");
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < p; j++)
+        {
+            B[i, j] = (j + 1) * i;
+
+            Console.Write($"{B[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void MatrizA(int[,] A, int m, int n)
+{
+    Console.WriteLine("***A***");
+
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            A[i, j] = (i + 1) * j;
+
+            Console.Write($"{A[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+bool MoreThanCero(int m, int n, int p)
+{
+    return m <= 0 || n <= 0 || p <= 0;
+}
+
 Console.WriteLine("Saliendo del programa.");
