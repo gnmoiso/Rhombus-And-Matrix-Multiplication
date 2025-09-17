@@ -1,5 +1,4 @@
 ﻿using Shared;
-using System.Drawing;
 
 var answer = String.Empty;
 var options = new List<string> { "s", "n" };
@@ -54,5 +53,5 @@ bool SIzeMinor(int size)
 
 bool SizeIsOdd(int size)
 {
-    return size % 2 == 0 & size >3;
+    return size % 2 == 0 & size > 3;
 }

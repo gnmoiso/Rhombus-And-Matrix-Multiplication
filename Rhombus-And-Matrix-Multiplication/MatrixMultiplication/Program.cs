@@ -11,7 +11,7 @@ do
 
     if (MoreThanZero(m, n, p))
     {
-        Console.WriteLine("Los valores deben ser mayores a 0.");
+        Console.WriteLine("Los valores deben ser mayores a 0. ");
     }
     else
     {
@@ -84,4 +84,3 @@ bool MoreThanZero(int m, int n, int p)
 {
     return m <= 0 || n <= 0 || p <= 0;
 }
-
