@@ -28,7 +28,7 @@ do
         answer = ConsoleExtension.GetValidOptions("Desea continuar? [S]í / [N]o?....:  ", options);
     } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
 } while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
-
+Console.WriteLine("Saliendo del programa.");
 void MatrizC(int[,] A, int[,] B, int m, int n, int p)
 {
     Console.WriteLine("***C***");
@@ -85,4 +85,3 @@ bool MoreThanCero(int m, int n, int p)
     return m <= 0 || n <= 0 || p <= 0;
 }
 
-Console.WriteLine("Saliendo del programa.");
