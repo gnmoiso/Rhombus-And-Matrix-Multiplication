@@ -9,7 +9,7 @@ do
     var n = ConsoleExtension.GetInt("Ingrese el valor de n: ");
     var p = ConsoleExtension.GetInt("Ingrese el valor de p: ");
 
-    if (MoreThanCero(m, n, p))
+    if (MoreThanZero(m, n, p))
     {
         Console.WriteLine("Los valores deben ser mayores a 0.");
     }
@@ -80,7 +80,7 @@ void MatrizA(int[,] A, int m, int n)
     }
 }
 
-bool MoreThanCero(int m, int n, int p)
+bool MoreThanZero(int m, int n, int p)
 {
     return m <= 0 || n <= 0 || p <= 0;
 }
